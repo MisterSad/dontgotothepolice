@@ -30,7 +30,27 @@ export default function AudioPlayer({ src }: AudioPlayerProps) {
                 });
         }
 
+        const handleInteraction = () => {
+            if (audioRef.current && audioRef.current.paused) {
+                const promise = audioRef.current.play();
+                if (promise !== undefined) {
+                    promise.then(() => {
+                        setIsPlaying(true);
+                        document.removeEventListener("click", handleInteraction);
+                        document.removeEventListener("keydown", handleInteraction);
+                    }).catch(() => {
+                        // Still blocked
+                    });
+                }
+            }
+        };
+
+        document.addEventListener("click", handleInteraction);
+        document.addEventListener("keydown", handleInteraction);
+
         return () => {
+            document.removeEventListener("click", handleInteraction);
+            document.removeEventListener("keydown", handleInteraction);
             if (audioRef.current) {
                 audioRef.current.pause();
                 audioRef.current.src = "";
@@ -53,8 +73,8 @@ export default function AudioPlayer({ src }: AudioPlayerProps) {
         <button
             onClick={toggleMute}
             className={`fixed top-4 right-4 z-50 p-2 border transition-all ${isPlaying
-                    ? "border-green-terminal text-green-terminal bg-black/50 hover:bg-green-terminal/20"
-                    : "border-gray-600 text-gray-500 bg-black/80 hover:border-white hover:text-white"
+                ? "border-green-terminal text-green-terminal bg-black/50 hover:bg-green-terminal/20"
+                : "border-gray-600 text-gray-500 bg-black/80 hover:border-white hover:text-white"
                 } rounded font-mono text-xs flex items-center gap-2 backdrop-blur-sm`}
             aria-label="Toggle Background Music"
         >
