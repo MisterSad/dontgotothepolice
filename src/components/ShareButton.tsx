@@ -7,7 +7,8 @@ interface ShareButtonProps {
 
 export default function ShareButton({ score, time }: ShareButtonProps) {
     const handleShare = async () => {
-        const url = "https://dontgotothepolice.orangecyberdefense.com";
+        const documentaryUrl = "https://dontgotothepolice.orangecyberdefense.com";
+        const gameUrl = "https://dontgotothepolice.vercel.app/";
 
         const text = `🔐 Je viens de terminer l'escape game "Don't Go to the Police" - et j'ai obtenu le grade ${score} en ${time} !
 
@@ -15,7 +16,8 @@ export default function ShareButton({ score, time }: ShareButtonProps) {
 
 Inspiré de l'attaque réelle de LockBit contre Coaxis en décembre 2023, racontée dans le documentaire de @Orange Cyberdefense.
 
-👉 Jouez ici : ${url}
+🎬 Regardez le documentaire : ${documentaryUrl}
+🎮 Faites l'escape game à votre tour : ${gameUrl}
 
 #DontGoToThePolice #OrangeCyberdefense #Orange`;
 
