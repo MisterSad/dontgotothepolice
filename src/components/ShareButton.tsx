@@ -7,7 +7,7 @@ interface ShareButtonProps {
 
 export default function ShareButton({ score, time }: ShareButtonProps) {
     const handleShare = async () => {
-        const url = typeof window !== "undefined" ? window.location.href : "https://dontgotothepolice.orangecyberdefense.com";
+        const url = "https://dontgotothepolice.orangecyberdefense.com";
 
         const text = `🔐 Je viens de terminer l'escape game "Don't Go to the Police" - et j'ai obtenu le grade ${score} en ${time} !
 
@@ -17,7 +17,7 @@ Inspiré de l'attaque réelle de LockBit contre Coaxis en décembre 2023, racont
 
 👉 Jouez ici : ${url}
 
-#DontGoToThePolice #OrangeCyberdefense`;
+#DontGoToThePolice #OrangeCyberdefense #Orange`;
 
         const isMobile = typeof navigator !== "undefined" && /android|iphone|ipad|ipod/i.test(navigator.userAgent || "");
 
