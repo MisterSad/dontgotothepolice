@@ -24,7 +24,7 @@ export default function ScoreScreen({ score, timeElapsed }: ScoreScreenProps) {
     };
 
     return (
-        <div className="bg-black/80 border border-orange-brand p-8 flex flex-col items-center justify-center text-center gap-6 animate-in fade-in zoom-in duration-1000 scanline relative">
+        <div className="bg-black/80 border border-orange-brand p-8 flex flex-col items-center justify-center text-center gap-6 animate-in fade-in zoom-in duration-700 scanline relative">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-black via-orange-brand to-black" />
 
             <h2 className="text-3xl font-mono text-orange-brand font-bold">INTRUSION CONTENUE</h2>

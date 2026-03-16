@@ -65,7 +65,7 @@ export default function Level2Logs({ onComplete, timeIsUp }: Level2Props) {
     const isComplete = foundSuspects.length === 5 || timeIsUp;
 
     return (
-        <div className="flex flex-col gap-6 animate-in fade-in duration-1000 h-full">
+        <div className="flex flex-col gap-6 animate-in fade-in duration-700 h-full">
             <div className="mb-4">
                 <h2 className="text-2xl font-mono text-orange-brand font-bold uppercase mb-2">
                     Niveau 2 : Sous les Radars

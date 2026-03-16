@@ -55,7 +55,7 @@ export default function Level4Hygiene({ onComplete }: Level4Props) {
     }
 
     return (
-        <div className="flex flex-col gap-6 animate-in fade-in duration-1000 h-full overflow-hidden flex-1 pb-10">
+        <div className="flex flex-col gap-6 animate-in fade-in duration-700 h-full overflow-hidden flex-1 pb-10">
             <div>
                 <h2 className="text-2xl font-mono text-orange-brand font-bold uppercase mb-2">
                     Niveau 4 : La Reconstruction

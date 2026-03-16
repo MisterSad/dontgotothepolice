@@ -42,7 +42,7 @@ export default function Level5Decrypt({ onComplete }: Level5Props) {
     };
 
     return (
-        <div className="flex flex-col gap-6 animate-in fade-in duration-1000">
+        <div className="flex flex-col gap-6 animate-in fade-in duration-700">
             <div>
                 <h2 className="text-2xl font-mono text-orange-brand font-bold uppercase mb-2">
                     Niveau 5 : Le Décryptage Final

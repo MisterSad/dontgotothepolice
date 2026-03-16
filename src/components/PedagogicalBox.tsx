@@ -13,7 +13,7 @@ export default function PedagogicalBox({
 }: PedagogicalBoxProps) {
     return (
         <div
-            className={`mt-8 p-6 border-l-4 bg-black/50 backdrop-blur-sm shadow-xl flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-4 duration-500 ${isSuccess
+            className={`mt-8 p-6 border-l-4 bg-black/50 backdrop-blur-sm shadow-xl flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-4 duration-300 ${isSuccess
                     ? "border-green-success"
                     : "border-orange-brand"
                 }`}

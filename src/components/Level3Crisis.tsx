@@ -64,7 +64,7 @@ export default function Level3Crisis({ onComplete }: Level3Props) {
 
     if (showRansom) {
         return (
-            <div className="animate-in fade-in zoom-in duration-500 bg-red-danger/10 border-2 border-red-danger p-8 h-full flex flex-col items-center justify-center text-center gap-6 relative overflow-hidden text-red-danger">
+            <div className="animate-in fade-in zoom-in duration-300 bg-red-danger/10 border-2 border-red-danger p-8 h-full flex flex-col items-center justify-center text-center gap-6 relative overflow-hidden text-red-danger">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-20 MixBlendMode-overlay mix-blend-overlay"></div>
                 <h2 className="text-4xl md:text-5xl font-mono font-bold uppercase animate-pulse hover:animate-shake">
                     ⚠️ YOUR FILES HAVE BEEN ENCRYPTED
@@ -104,7 +104,7 @@ export default function Level3Crisis({ onComplete }: Level3Props) {
     };
 
     return (
-        <div className="flex flex-col gap-6 animate-in fade-in duration-1000">
+        <div className="flex flex-col gap-6 animate-in fade-in duration-700">
             {!isComplete ? (
                 <>
                     <div className="mb-2">

@@ -60,7 +60,7 @@ export default function Level1Phishing({ onComplete }: Level1Props) {
     };
 
     return (
-        <div className="flex flex-col gap-6 animate-in fade-in duration-1000">
+        <div className="flex flex-col gap-6 animate-in fade-in duration-700">
             <div className="mb-4">
                 <h2 className="text-2xl font-mono text-orange-brand font-bold uppercase mb-2">
                     Niveau 1 : Le Maillon Faible

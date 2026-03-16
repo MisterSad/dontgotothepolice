@@ -101,8 +101,8 @@ export default function Home() {
             <TerminalText text="> Infrastructure client COAXIS - Fauguerolles, France" className="block text-xl" speed={40} />
             <TerminalText text="> Anomalie détectée sur 24% des serveurs" className="block text-xl" speed={40} />
             <TerminalText text="> Statut : INCONNU" className="block text-xl text-red-danger font-bold" speed={40} />
-            <TerminalText text="> ..." className="block text-xl delay-1000" speed={40} />
-            <div className="mt-8 animate-in fade-in slide-in-from-bottom flex flex-col gap-4 duration-1000 delay-2000">
+            <TerminalText text="> ..." className="block text-xl delay-500" speed={40} />
+            <div className="mt-8 animate-in fade-in slide-in-from-bottom flex flex-col gap-4 duration-700 delay-1000">
               <p className="text-white text-xl font-mono">
                 Vous êtes l'analyste de garde cette nuit.<br />
                 Vous avez 5 minutes avant que tout bascule.
@@ -119,7 +119,7 @@ export default function Home() {
 
       case GameState.BRIEFING:
         return (
-          <div className="flex flex-col h-full max-w-3xl mx-auto pt-10 gap-8 animate-in fade-in duration-1000">
+          <div className="flex flex-col h-full max-w-3xl mx-auto pt-10 gap-8 animate-in fade-in duration-700">
             <div className="bg-black/50 border border-gray-800 p-8">
               <h2 className="text-3xl font-mono text-orange-brand font-bold uppercase mb-6 flex items-center gap-4">
                 <span className="text-4xl">📁</span> DOSSIER INCIDENT #4902
@@ -180,7 +180,7 @@ export default function Home() {
 
       {/* Header with Timer and Progress */}
       {isLevel && (
-        <header className="max-w-4xl w-full mx-auto mb-8 animate-in slide-in-from-top duration-500 z-10 relative bg-black/50 p-4 border border-gray-800">
+        <header className="max-w-4xl w-full mx-auto mb-8 animate-in slide-in-from-top duration-300 z-10 relative bg-black/50 p-4 border border-gray-800">
           <div className="flex justify-between items-center mb-4">
             <h1 className="font-mono text-orange-brand font-bold text-xl hidden md:block">
               // ORANGE CYBERDEFENSE : SOC_TERMINAL
