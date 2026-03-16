@@ -6,7 +6,7 @@ interface ShareButtonProps {
 }
 
 export default function ShareButton({ score, time }: ShareButtonProps) {
-    const handleShare = () => {
+    const handleShare = async () => {
         const url = typeof window !== "undefined" ? window.location.href : "https://dontgotothepolice.orangecyberdefense.com";
 
         const text = `🔐 Je viens de terminer l'escape game "Don't Go to the Police" - et j'ai obtenu le grade ${score} en ${time} !
@@ -18,6 +18,23 @@ Inspiré de l'attaque réelle de LockBit contre Coaxis en décembre 2023, racont
 👉 Jouez ici : ${url}
 
 #DontGoToThePolice #OrangeCyberdefense`;
+
+        const isMobile = typeof navigator !== "undefined" && /android|iphone|ipad|ipod/i.test(navigator.userAgent || "");
+
+        if (isMobile && navigator.share) {
+            try {
+                await navigator.share({
+                    text: text
+                });
+                return;
+            } catch (error) {
+                console.log("Partage natif annulé ou échoué:", error);
+                if (error instanceof Error && error.name === "AbortError") {
+                    return;
+                }
+                // En cas d'autre erreur, on continue vers le fallback
+            }
+        }
 
         const linkedInUrl = `https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(text)}`;
         window.open(linkedInUrl, "_blank");
