@@ -25,6 +25,8 @@ export const metadata: Metadata = {
 
 import AudioPlayer from "@/components/AudioPlayer";
 
+import { Analytics } from "@vercel/analytics/react";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,6 +39,7 @@ export default function RootLayout({
       >
         <AudioPlayer src="/audio/ambient.mp3" />
         {children}
+        <Analytics />
       </body>
     </html>
   );
