@@ -24,8 +24,8 @@ export const metadata: Metadata = {
 };
 
 import AudioPlayer from "@/components/AudioPlayer";
-
 import { Analytics } from "@vercel/analytics/next";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 export default function RootLayout({
   children,
@@ -37,8 +37,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-grain scanline`}
       >
-        <AudioPlayer src="/audio/ambient.mp3" />
-        {children}
+        <LanguageProvider>
+          <AudioPlayer src="/audio/ambient.mp3" />
+          {children}
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

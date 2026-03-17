@@ -1,3 +1,5 @@
+import { useLanguage } from "@/i18n/LanguageContext";
+
 interface PedagogicalBoxProps {
     title: string;
     content: string;
@@ -11,6 +13,8 @@ export default function PedagogicalBox({
     onNext,
     isSuccess = true,
 }: PedagogicalBoxProps) {
+    const { t } = useLanguage();
+
     return (
         <div
             className={`mt-8 p-6 border-l-4 bg-black/50 backdrop-blur-sm shadow-xl flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-4 duration-300 ${isSuccess
@@ -38,7 +42,7 @@ export default function PedagogicalBox({
                         : "bg-orange-brand/10 text-orange-brand hover:bg-orange-brand/20 border border-orange-brand/50"
                     }`}
             >
-                [CONTINUER L'INVESTIGATION]
+                {t.pedagogical.continue}
             </button>
         </div>
     );

@@ -3,12 +3,14 @@
 import { useState, useEffect, useRef } from "react";
 import PedagogicalBox from "./PedagogicalBox";
 import TerminalText from "./TerminalText";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface Level2Props {
     onComplete: (score: number) => void;
     timeIsUp: boolean;
 }
 
+// System logs stay in English in both languages — they're technical logs
 const LOGS_DATA = [
     { id: 1, text: "[02:00:15] HTTP GET /api/v1/health - 200 OK", suspicious: false },
     { id: 2, text: "[02:00:18] AUTH SUCCESS - User: j.dupont", suspicious: false },
@@ -30,6 +32,8 @@ const LOGS_DATA = [
 ];
 
 export default function Level2Logs({ onComplete, timeIsUp }: Level2Props) {
+    const { t } = useLanguage();
+
     const [shuffledLogsData] = useState(() => [...LOGS_DATA].sort(() => Math.random() - 0.5));
     const [logs, setLogs] = useState<typeof LOGS_DATA>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,8 +47,6 @@ export default function Level2Logs({ onComplete, timeIsUp }: Level2Props) {
             if (currentIndex < shuffledLogsData.length) {
                 setLogs((prev) => [...prev, shuffledLogsData[currentIndex]]);
                 setCurrentIndex((prev) => prev + 1);
-
-                // Auto scroll
                 setTimeout(() => {
                     logsEndRef.current?.scrollIntoView({ behavior: "smooth" });
                 }, 50);
@@ -68,15 +70,13 @@ export default function Level2Logs({ onComplete, timeIsUp }: Level2Props) {
         <div className="flex flex-col gap-6 animate-in fade-in duration-700 h-full">
             <div className="mb-4">
                 <h2 className="text-2xl font-mono text-orange-brand font-bold uppercase mb-2">
-                    Niveau 2 : Sous les Radars
+                    {t.level2.title}
                 </h2>
-                <p className="text-foreground-light">
-                    [ 08/12/2023 - 02:00 CET ]<br />
-                    L'attaquant fouille le réseau. Identifiez les 5 lignes de logs système suspectes
-                    avant que le temps ne s'écoule.
+                <p className="text-foreground-light whitespace-pre-line">
+                    {t.level2.description}
                 </p>
                 <div className="font-mono mt-4 flex items-center gap-4">
-                    <span className="text-green-terminal">Lignes suspectes trouvées :</span>
+                    <span className="text-green-terminal">{t.level2.counter}</span>
                     <span className="text-2xl font-bold bg-black px-3 py-1 border border-green-terminal text-green-terminal shadow-[0_0_10px_rgba(0,255,65,0.4)]">
                         {foundSuspects.length} / 5
                     </span>
@@ -109,8 +109,8 @@ export default function Level2Logs({ onComplete, timeIsUp }: Level2Props) {
 
             {isComplete && (
                 <PedagogicalBox
-                    title={timeIsUp ? "TEMPS ÉCOULÉ - L'ATTAQUANT AVANCE" : "RÉFLEXE CYBER #2"}
-                    content="La surveillance continue (monitoring) des logs est essentielle. Les signaux faibles - connexions inhabituelles, élévation de privilèges, trafic sortant anormal - sont souvent les premiers indices d'une intrusion."
+                    title={timeIsUp ? t.pedagogical.reflexes[2].titleFail : t.pedagogical.reflexes[2].titleOk}
+                    content={t.pedagogical.reflexes[2].content}
                     isSuccess={foundSuspects.length >= 3}
                     onNext={() => onComplete(foundSuspects.length * 20)}
                 />

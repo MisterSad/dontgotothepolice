@@ -2,24 +2,17 @@
 
 import { useState } from "react";
 import PedagogicalBox from "./PedagogicalBox";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface Level4Props {
     onComplete: (score: number) => void;
 }
 
-const PRACTICES = [
-    { id: 1, text: "Mot de passe 'Coaxis2023!' utilisé par 3 employés", isSecure: false },
-    { id: 2, text: "Authentification multi-facteurs (MFA) activée sur le VPN", isSecure: true },
-    { id: 3, text: "Mises à jour désactivées 'pour ne pas perturber la prod'", isSecure: false },
-    { id: 4, text: "Sauvegardes stockées sur un serveur isolé (air-gapped)", isSecure: true },
-    { id: 5, text: "Post-it avec le mot de passe admin collé sur un écran", isSecure: false },
-    { id: 6, text: "Politique de mots de passe complexes (12+ caractères)", isSecure: true },
-    { id: 7, text: "Un seul compte administrateur partagé entre 5 techniciens", isSecure: false },
-    { id: 8, text: "Formation anti-phishing trimestrielle pour tous", isSecure: true },
-];
-
 export default function Level4Hygiene({ onComplete }: Level4Props) {
-    const [shuffledPractices] = useState(() => [...PRACTICES].sort(() => Math.random() - 0.5));
+    const { t } = useLanguage();
+
+    const practices = t.level4.practices;
+    const [shuffledPractices] = useState(() => [...practices].map((p, i) => ({ ...p, id: i + 1 })).sort(() => Math.random() - 0.5));
     const [config, setConfig] = useState<Record<number, boolean | null>>(() =>
         Object.fromEntries(shuffledPractices.map(p => [p.id, null]))
     );
@@ -46,8 +39,8 @@ export default function Level4Hygiene({ onComplete }: Level4Props) {
     if (showResult && errorsMade <= 2) {
         return (
             <PedagogicalBox
-                title="RÉFLEXE CYBER #4"
-                content="80% des cyberattaques exploitent des failles humaines. MFA, mots de passe uniques, mises à jour, formation anti-phishing : ces gestes simples sont votre première ligne de défense."
+                title={t.pedagogical.reflexes[4].title}
+                content={t.pedagogical.reflexes[4].content}
                 isSuccess={true}
                 onNext={() => onComplete(Math.max(100 - errorsMade * 25, 25))}
             />
@@ -58,13 +51,10 @@ export default function Level4Hygiene({ onComplete }: Level4Props) {
         <div className="flex flex-col gap-6 animate-in fade-in duration-700 h-full overflow-hidden flex-1 pb-10">
             <div>
                 <h2 className="text-2xl font-mono text-orange-brand font-bold uppercase mb-2">
-                    Niveau 4 : La Reconstruction
+                    {t.level4.title}
                 </h2>
-                <p className="text-foreground-light">
-                    [ 14/12/2023 - 09:00 CET ]<br />
-                    Avant de redémarrer les services clients, vous devez assainir le SI.
-                    Classez chaque pratique observée comme "SÉCURISÉE" ou "DANGEREUSE".
-                    (Max 2 erreurs tolérées).
+                <p className="text-foreground-light whitespace-pre-line">
+                    {t.level4.description}
                 </p>
             </div>
 
@@ -76,8 +66,7 @@ export default function Level4Hygiene({ onComplete }: Level4Props) {
                     return (
                         <div
                             key={practice.id}
-                            className={`p-4 border flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all ${isErrorState ? "border-red-danger bg-red-danger/10 animate-pulse" : "border-gray-800 bg-black/50"
-                                }`}
+                            className={`p-4 border flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all ${isErrorState ? "border-red-danger bg-red-danger/10 animate-pulse" : "border-gray-800 bg-black/50"}`}
                         >
                             <span className="font-mono text-sm md:text-base flex-1">
                                 {practice.text}
@@ -91,7 +80,7 @@ export default function Level4Hygiene({ onComplete }: Level4Props) {
                                         : "bg-black text-gray-500 border-gray-700 hover:border-red-danger"
                                         }`}
                                 >
-                                    DANGEREUX
+                                    {t.level4.btnDangerous}
                                 </button>
                                 <button
                                     onClick={() => handleToggle(practice.id, true)}
@@ -100,7 +89,7 @@ export default function Level4Hygiene({ onComplete }: Level4Props) {
                                         : "bg-black text-gray-500 border-gray-700 hover:border-green-success"
                                         }`}
                                 >
-                                    SÉCURISÉ
+                                    {t.level4.btnSecure}
                                 </button>
                             </div>
                         </div>
@@ -110,9 +99,9 @@ export default function Level4Hygiene({ onComplete }: Level4Props) {
 
             <div className="mt-4 pt-4 border-t border-gray-800 flex justify-between items-center">
                 {showResult && errorsMade > 2 ? (
-                    <span className="text-red-danger font-mono font-bold">❌ {errorsMade} erreurs détectées. Corrigez-les.</span>
+                    <span className="text-red-danger font-mono font-bold">{t.level4.errorMsg(errorsMade)}</span>
                 ) : (
-                    <span className="text-gray-500 font-mono">Assainissement requis avant redémarrage.</span>
+                    <span className="text-gray-500 font-mono">{t.level4.pendingMsg}</span>
                 )}
 
                 <button
@@ -123,7 +112,7 @@ export default function Level4Hygiene({ onComplete }: Level4Props) {
                         : "bg-gray-800 text-gray-500 cursor-not-allowed"
                         }`}
                 >
-                    [ VALIDER LA SÉCURITÉ ]
+                    {t.level4.validate}
                 </button>
             </div>
         </div>
