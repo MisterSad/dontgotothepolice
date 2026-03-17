@@ -102,6 +102,12 @@ const translations = {
       description:
         "[ 08/12/2023 - 04:32 CET ]\nLa crise est là. Prenez les bonnes décisions dans l'urgence.",
       ransomButton: "[ LANCER LA RÉPONSE À INCIDENT ]",
+      ransomTitle: "⚠️ VOS FICHIERS ONT ÉTÉ CHIFFRÉS",
+      ransomInfection: "> INFECTION LOCKBIT 3.0 DÉTECTÉE",
+      ransomWarning: "> DON'T GO TO THE POLICE.",
+      ransomPayment: "Paiement : 5 000 000 $ en BTC",
+      ransomDeadline: "Délai : 14 jours",
+      ransomThreat: "Si vous ne payez pas, toutes les données de vos clients seront publiées.",
       questions: [
         {
           question: "1. Que faire en premier suite au chiffrement des fichiers ?",
@@ -430,6 +436,12 @@ Inspiré de l'attaque réelle de LockBit contre Coaxis en décembre 2023, racont
       description:
         "[ 08/12/2023 - 04:32 CET ]\nThe crisis is here. Make the right decisions under pressure.",
       ransomButton: "[ LAUNCH INCIDENT RESPONSE ]",
+      ransomTitle: "⚠️ YOUR FILES HAVE BEEN ENCRYPTED",
+      ransomInfection: "> LOCKBIT 3.0 INFECTION DETECTED",
+      ransomWarning: "> DON'T GO TO THE POLICE.",
+      ransomPayment: "Payment: $5,000,000 in BTC",
+      ransomDeadline: "Deadline: 14 days",
+      ransomThreat: "If you don't pay, all your clients' data will be published.",
       questions: [
         {
           question: "1. What should you do first after the files are encrypted?",
@@ -760,6 +772,12 @@ Inspired by the real LockBit attack on Coaxis in December 2023, told in the docu
       description:
         "[ 08.12.2023 - 04:32 Uhr MEZ ]\nDie Krise ist da. Treffen Sie unter Druck die richtigen Entscheidungen.",
       ransomButton: "[ INCIDENT RESPONSE STARTEN ]",
+      ransomTitle: "⚠️ IHRE DATEIEN WURDEN VERSCHLÜSSELT",
+      ransomInfection: "> LOCKBIT 3.0 INFEKTION ERKANNT",
+      ransomWarning: "> DON'T GO TO THE POLICE.",
+      ransomPayment: "Zahlung: 5.000.000 $ in BTC",
+      ransomDeadline: "Frist: 14 Tage",
+      ransomThreat: "Wenn Sie nicht zahlen, werden alle Daten Ihrer Kunden veröffentlicht.",
       questions: [
         {
           question: "1. Was sollten Sie zuerst tun, nachdem die Dateien verschlüsselt wurden?",

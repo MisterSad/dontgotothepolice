@@ -31,15 +31,15 @@ export default function Level3Crisis({ onComplete }: Level3Props) {
             <div className="animate-in fade-in zoom-in duration-300 bg-red-danger/10 border-2 border-red-danger p-8 h-full flex flex-col items-center justify-center text-center gap-6 relative overflow-hidden text-red-danger">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-20 MixBlendMode-overlay mix-blend-overlay"></div>
                 <h2 className="text-4xl md:text-5xl font-mono font-bold uppercase animate-pulse hover:animate-shake">
-                    ⚠️ YOUR FILES HAVE BEEN ENCRYPTED
+                    {t.level3.ransomTitle}
                 </h2>
                 <div className="font-mono text-xl max-w-2xl bg-black/80 p-6 border border-red-danger shadow-2xl">
-                    <TerminalText text="> LOCKBIT 3.0 INFECTION DETECTED" className="block mb-2 text-red-danger" speed={50} />
-                    <TerminalText text="> DON'T GO TO THE POLICE." className="block mb-4 text-red-danger" speed={80} />
+                    <TerminalText text={t.level3.ransomInfection} className="block mb-2 text-red-danger" speed={50} />
+                    <TerminalText text={t.level3.ransomWarning} className="block mb-4 text-red-danger" speed={80} />
                     <p className="text-white mt-4 text-left">
-                        Payment: $5,000,000 in BTC<br />
-                        Deadline: 14 days<br /><br />
-                        Si vous ne payez pas, toutes les données de vos clients seront publiées.
+                        {t.level3.ransomPayment}<br />
+                        {t.level3.ransomDeadline}<br /><br />
+                        {t.level3.ransomThreat}
                     </p>
                 </div>
                 <button
