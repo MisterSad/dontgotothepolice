@@ -170,7 +170,10 @@ export default function Home() {
   const isLevel = gameState >= GameState.LEVEL1 && gameState <= GameState.LEVEL5;
   const currentLevelNum = isLevel ? gameState - GameState.BRIEFING : 0;
 
-  const handleLangToggle = () => setLang(lang === "fr" ? "en" : "fr");
+  const langCycle: Record<string, "fr" | "en" | "de"> = { fr: "en", en: "de", de: "fr" };
+  const handleLangToggle = () => setLang(langCycle[lang]);
+
+  const flagEmoji: Record<string, string> = { fr: "🇬🇧", en: "🇩🇪", de: "🇫🇷" };
 
   return (
     <main className={`min-h-screen bg-black text-white p-4 md:p-8 flex flex-col relative transition-opacity duration-300 ${glitching ? "animate-glitch-heavy" : "opacity-100"}`}>
@@ -186,7 +189,7 @@ export default function Home() {
           className="flex items-center gap-2 px-3 py-1.5 font-mono text-sm font-bold border border-gray-700 bg-black/70 text-gray-300 hover:border-orange-brand hover:text-orange-brand transition-all backdrop-blur-sm"
         >
           <span className="text-lg leading-none">
-            {lang === "fr" ? "🇬🇧" : "🇫🇷"}
+            {flagEmoji[lang]}
           </span>
           <span>{t.switchLang}</span>
         </button>

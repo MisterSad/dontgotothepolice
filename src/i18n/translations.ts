@@ -1,4 +1,4 @@
-export type Lang = "fr" | "en";
+export type Lang = "fr" | "en" | "de";
 
 const translations = {
   fr: {
@@ -338,8 +338,8 @@ Inspiré de l'attaque réelle de LockBit contre Coaxis en décembre 2023, racont
   //  ENGLISH
   // ════════════════════════════════════════════════════
   en: {
-    switchLang: "FR",
-    switchLangLabel: "Passer en français",
+    switchLang: "DE",
+    switchLangLabel: "Auf Deutsch wechseln",
 
     boot: {
       line1: "Initializing boot sequence...",
@@ -652,6 +652,341 @@ Inspired by the real LockBit attack on Coaxis in December 2023, told in the docu
 
 🎬 Watch the documentary: https://dontgotothepolice.orangecyberdefense.com
 🎮 Play the escape game: https://dontgotothepolice.vercel.app/
+
+#DontGoToThePolice #OrangeCyberdefense #Orange`,
+    },
+  },
+
+  // ════════════════════════════════════════════════════
+  //  GERMAN
+  // ════════════════════════════════════════════════════
+  de: {
+    switchLang: "FR",
+    switchLangLabel: "Auf Französisch wechseln",
+
+    // ──────────── Page – BOOT ────────────
+    boot: {
+      line1: "Boot-Sequenz wird initialisiert...",
+      line2: "Kernel-Module werden geladen (143 Module)... abgeschlossen.",
+      line3: "Root-Dateisystem wird eingehängt (schreibgeschützt)... abgeschlossen.",
+      line4: "Security Operations Center-Schnittstelle wird gestartet...",
+    },
+
+    // ──────────── Page – INTRO ────────────
+    intro: {
+      line1: "> KRITISCHE WARNUNG - 08.12.2023 - 04:50 Uhr MEZ",
+      line2: "> Client-Infrastruktur COAXIS - Fauguerolles, Frankreich",
+      line3: "> Anomalie auf 24 % der Server entdeckt",
+      line4: "> Status: UNBEKANNT",
+      line5: "> ...",
+      body1: "Sie sind der diensthabende Analyst in dieser Nacht.",
+      body2: "Sie haben 5 Minuten, bevor alles zusammenbricht.",
+      cta: "[ MISSION ANNEHMEN ]",
+    },
+
+    // ──────────── Page – BRIEFING ────────────
+    briefing: {
+      title: "📁 STÖRUNGSAKTE #4902",
+      client: "Kunde:",
+      clientValue: "Coaxis (Cloud-Hosting-Anbieter)",
+      context: "Kontext:",
+      contextValue:
+        "Sie hosten Daten für Tausende von Buchhaltungsbüros und Gesundheitsunternehmen.",
+      situation: "Lage:",
+      situationValue:
+        "Joseph Veigas (CEO) hat gerade unser SOC angerufen. Ein Großteil der internen Infrastruktur reagiert seit Stunden nicht mehr. Backup-Server scheinen ebenfalls instabil.",
+      mission:
+        "Ihre Mission: Den Angriff zurückverfolgen, den Eindringling identifizieren, den Einbruch eindämmen und das IS bereinigen. Die Zeit läuft ab.",
+      cta: "[ SOC BETRETEN ]",
+    },
+
+    // ──────────── Page – HEADER ────────────
+    header: {
+      titleFull: "// ORANGE CYBERDEFENSE : SOC_TERMINAL",
+      titleShort: "// SOC_TERMINAL",
+      countdown: "Countdown:",
+    },
+
+    // ──────────── Level 1 ────────────
+    level1: {
+      title: "Stufe 1: Das schwache Glied",
+      description:
+        "[ 07.12.2023 - 22:43 Uhr MEZ ]\nEin Mitarbeiter des Kunden klickte auf eine verdächtige E-Mail und ermöglichte so den ersten Einbruch. Identifizieren Sie die Phishing-E-Mail unter diesen 4 Nachrichten.",
+      labelFrom: "Von:",
+      labelSubject: "Betreff:",
+      realLink: "Echter Link:",
+      errorMsg:
+        "❌ Das ist es nicht. Schauen Sie sich die Adressen und URLs genauer an...",
+      emails: [
+        {
+          sender: "IT-Support <support@coaxis.fr>",
+          subject: "Erforderliches Update: VPN-Server",
+          body: "Hallo,\n\nEin neues Sicherheitsupdate ist für den VPN-Server erforderlich.\n\nBitte laden Sie den Patch hier herunter: https://vpn.coaxis.fr/patch",
+          isPhishing: false,
+        },
+        {
+          sender: "Personalwesen <hr@coaxis.fr>",
+          subject: "Neue interne Vorschriften 2024",
+          body: "Hallo,\n\nIm Anhang finden Sie die neuen internen Vorschriften, gültig ab dem 1. Januar 2024.\n\nMit freundlichen Grüßen,\nPersonalabteilung",
+          isPhishing: false,
+        },
+        {
+          sender: "Microsoft-Dienst <warnung@mlcrosoft-security.com>",
+          subject: "Sicherheitswarnung: Ungewöhnliche Anmeldung",
+          body: "Ihr Microsoft Office 365-Konto wurde aufgrund verdächtiger Aktivitäten gesperrt.\n\nUm Ihren Zugang wiederherzustellen, bestätigen Sie bitte Ihre Identität innerhalb von 24 Stunden:\n\nLink: https://login.mlcrosoft.com/verify",
+          isPhishing: true,
+          hoverLink: "http://185.25.x.x/payload.exe",
+        },
+        {
+          sender: "Joseph Veigas <j.veigas@coaxis.fr>",
+          subject: "Vorstandssitzung morgen",
+          body: "Hallo zusammen,\n\nKönnten Sie mir bitte die Q4-Zahlen für die morgige Sitzung vorbereiten?\n\nDanke,\nJoseph",
+          isPhishing: false,
+        },
+      ],
+    },
+
+    // ──────────── Level 2 ────────────
+    level2: {
+      title: "Stufe 2: Unter dem Radar",
+      description:
+        "[ 08.12.2023 - 02:00 Uhr MEZ ]\nDer Angreifer durchsucht das Netzwerk. Identifizieren Sie die 5 verdächtigen Systemprotokollzeilen, bevor die Zeit abläuft.",
+      counter: "Gefundene verdächtige Zeilen:",
+    },
+
+    // ──────────── Level 3 ────────────
+    level3: {
+      title: "Stufe 3: Der Countdown",
+      description:
+        "[ 08.12.2023 - 04:32 Uhr MEZ ]\nDie Krise ist da. Treffen Sie unter Druck die richtigen Entscheidungen.",
+      ransomButton: "[ INCIDENT RESPONSE STARTEN ]",
+      questions: [
+        {
+          question: "1. Was sollten Sie zuerst tun, nachdem die Dateien verschlüsselt wurden?",
+          options: [
+            {
+              text: "Sofort zahlen, um die Daten schnell zurückzubekommen.",
+              isCorrect: false,
+              feedback:
+                "Niemals! Zahlen finanziert Kriminalität und bietet keine Garantie für eine Wiederherstellung.",
+            },
+            {
+              text: "Kompromittierte Systeme vom Netzwerk isolieren.",
+              isCorrect: true,
+              feedback:
+                "Richtig. Netzwerkkabel trennen / WLAN abschalten, um die Verbreitung zu stoppen – aber NICHT ausschalten.",
+            },
+            {
+              text: "Alle Server auf einmal hart abschalten.",
+              isCorrect: false,
+              feedback:
+                "Nein! Das vernichtet den RAM, der wertvolle forensische Beweise enthält.",
+            },
+          ],
+        },
+        {
+          question: "2. Wen sollten Sie zuerst alarmieren?",
+          options: [
+            {
+              text: "Die Presse, um den Vorfall publik zu machen und alle zu warnen.",
+              isCorrect: false,
+              feedback:
+                "Die öffentliche Kommunikation kommt später, nachdem das Unternehmen gesichert ist.",
+            },
+            {
+              text: "Das Krisenteam, Ihren Cyber-Dienstleister und die Behörden (BSI / Datenschutzbehörde).",
+              isCorrect: true,
+              feedback:
+                "Ja. Experten einbinden (z.B. Orange Cyberdefense) und Behörden benachrichtigen.",
+            },
+            {
+              text: "Nur die Geschäftsführung und sonst niemanden.",
+              isCorrect: false,
+              feedback:
+                "Unzureichend. Sie haben gesetzliche Meldepflichten (Datenschutz) bei Datenpannen.",
+            },
+          ],
+        },
+        {
+          question:
+            "3. Das Management bittet Sie, Backups wiederherzustellen. Was tun Sie?",
+          options: [
+            {
+              text: "Sie sofort wieder mit dem Netzwerk verbinden, um Zeit zu sparen.",
+              isCorrect: false,
+              feedback:
+                "Gefahr! Der Angreifer ist möglicherweise noch im Netzwerk und verschlüsselt Ihre Backups sofort.",
+            },
+            {
+              text: "Sie in einer isolierten 'sauberen Zone' prüfen, bevor sie verwendet werden.",
+              isCorrect: true,
+              feedback:
+                "Perfekt. Stellen Sie sicher, dass sie nicht kompromittiert oder infiziert sind, bevor Sie sie wiederherstellen.",
+            },
+            {
+              text: "Wir brauchen keine Backups, ein Entschlüsselungstool wird schnell gefunden.",
+              isCorrect: false,
+              feedback:
+                "Völlig unrealistisch gegenüber modernen Varianten wie LockBit 3.0.",
+            },
+          ],
+        },
+        {
+          question:
+            "4. Ein Kunde fordert sofortige Antworten, weil seine Dienste ausgefallen sind.",
+          options: [
+            {
+              text: "Lügen und sagen, es handele sich um einen vorübergehenden Stromausfall.",
+              isCorrect: false,
+              feedback:
+                "Lügen zerstört langfristig das Vertrauen. Die Wahrheit kommt immer ans Licht.",
+            },
+            {
+              text: "Transparent, sachlich und fortlaufend kommunizieren.",
+              isCorrect: true,
+              feedback:
+                "Das ist der Schlüssel: Die Krise eingestehen, erklären was getan wird, ohne unmögliche Fristen zu versprechen.",
+            },
+            {
+              text: "Sie ignorieren und nicht antworten, bis das Problem behoben ist.",
+              isCorrect: false,
+              feedback: "Stille erzeugt Panik und Gerüchte.",
+            },
+          ],
+        },
+      ],
+    },
+
+    // ──────────── Level 4 ────────────
+    level4: {
+      title: "Stufe 4: Der Wiederaufbau",
+      description:
+        "[ 14.12.2023 - 09:00 Uhr MEZ ]\nBevor Sie die Client-Dienste neu starten, müssen Sie das IS bereinigen. Stufen Sie jede Praxis als \"SICHER\" oder \"GEFÄHRLICH\" ein.\n(Max. 2 Fehler erlaubt).",
+      btnDangerous: "GEFÄHRLICH",
+      btnSecure: "SICHER",
+      validate: "[ SICHERHEIT VALIDIEREN ]",
+      errorMsg: (n: number) => `❌ ${n} Fehler gefunden. Bitte korrigieren.`,
+      pendingMsg: "Bereinigung vor Neustart erforderlich.",
+      practices: [
+        {
+          text: "Passwort 'Coaxis2023!' von 3 Mitarbeitern gemeinsam genutzt",
+          isSecure: false,
+        },
+        {
+          text: "Multi-Faktor-Authentifizierung (MFA) im VPN aktiviert",
+          isSecure: true,
+        },
+        {
+          text: "Updates deaktiviert, 'um den Betrieb nicht zu stören'",
+          isSecure: false,
+        },
+        {
+          text: "Backups auf einem isolierten Server (Air-Gapped) gespeichert",
+          isSecure: true,
+        },
+        {
+          text: "Post-it mit Admin-Passwort an einem Bildschirm befestigt",
+          isSecure: false,
+        },
+        {
+          text: "Richtlinie für komplexe Passwörter (12+ Zeichen) durchgesetzt",
+          isSecure: true,
+        },
+        {
+          text: "Ein gemeinsames Admin-Konto für 5 Techniker",
+          isSecure: false,
+        },
+        {
+          text: "Vierteljährliches Anti-Phishing-Training für alle Mitarbeiter",
+          isSecure: true,
+        },
+      ],
+    },
+
+    // ──────────── Level 5 ────────────
+    level5: {
+      title: "Stufe 5: Die finale Entschlüsselung",
+      description:
+        "[ 15.12.2023 - 14:00 Uhr MEZ ]\nDie Backups sind sauber. Es bleibt nur noch eine letzte Nachricht der Gruppe LockBit 3.0. Verwenden Sie das Brute-Force-Tool, um die Verschiebung zu finden und die Nachricht zu entschlüsseln.",
+      labelEncrypted: "VERSCHLÜSSELTE NACHRICHT:",
+      labelDecrypting: "ENTSCHLÜSSELUNGSVERSUCH:",
+      labelShift: "VERSCHIEBUNG:",
+      btnTest: "[ SCHLÜSSEL TESTEN ]",
+      hint: "Hinweis: Der Buchstabe 'D' verschlüsselt ergibt 'K'...",
+      targetPhrase: "DIE BESTE VERTEIDIGUNG BIST DU",
+    },
+
+    // ──────────── PedagogicalBox ────────────
+    pedagogical: {
+      continue: "[UNTERSUCHUNG FORTSETZEN]",
+      reflexes: {
+        1: {
+          title: "CYBER-REFLEX #1",
+          content: `Überprüfen Sie immer die genaue URL, bevor Sie klicken. Ein einziges geändertes Zeichen kann zu einer Piraten-Website führen. „mlcrosoft" ist nicht „microsoft". Fahren Sie über Links, überprüfen Sie Domains. Der Angreifer ist ins Netzwerk eingedrungen.`,
+        },
+        2: {
+          titleOk: "CYBER-REFLEX #2",
+          titleFail: "ZEIT ABGELAUFEN — DER ANGREIFER RÜCKT VOR",
+          content:
+            "Kontinuierliche Log-Überwachung ist unerlässlich. Schwache Signale — ungewöhnliche Verbindungen, Rechteerweiterungen, abnormaler ausgehender Datenverkehr — sind oft die ersten Anzeichen eines Einbruchs.",
+        },
+        3: {
+          title: "CYBER-REFLEX #3",
+          content:
+            "Bei einem Cyberangriff — NIEMALS das Lösegeld zahlen. Isolieren, alarmieren (Behörden, Cyber-Dienstleister), Backups in einer sauberen Zone prüfen und transparent kommunizieren.",
+        },
+        4: {
+          title: "CYBER-REFLEX #4",
+          content:
+            "80 % der Cyberangriffe nutzen menschliche Schwachstellen aus. MFA, einzigartige Passwörter, Updates, Anti-Phishing-Training: Diese einfachen Gewohnheiten sind Ihre erste Verteidigungslinie.",
+        },
+        5: {
+          title: "CYBER-REFLEX #5",
+          content:
+            "Verschlüsselung schützt Ihre Daten. Aber wenn Ransomware sie gegen Sie einsetzt, können Sie sich nur mit sauberen Backups und vorausschauender Vorbereitung retten. Die beste Verteidigung sind Sie selbst.",
+        },
+      },
+    },
+
+    // ──────────── ScoreScreen ────────────
+    scoreScreen: {
+      title: "EINBRUCH EINGEDÄMMT",
+      grades: {
+        legend: "SOC-LEGENDE",
+        expert: "CYBER-EXPERTE",
+        confirmed: "ERFAHRENER ANALYST",
+        junior: "JUNIOR-ANALYST",
+      },
+      labelGrade: "ERREICHTER RANG",
+      labelTime: "REAKTIONSZEIT",
+      reflexesTitle: "Ihre 5 Überlebensreflexe:",
+      reflexes: [
+        "URL: Jeden Buchstaben prüfen.",
+        "Überwachung: Schwache Signale in Logs erkennen.",
+        "Krisenmanagement: Nicht zahlen, isolieren, alarmieren.",
+        "Hygiene: MFA und Updates sind unverzichtbar.",
+        "Backups: Ihre einzige Rettung vor Ransomware.",
+      ],
+      story1:
+        "In der Nacht vom 7. auf den 8. Dezember 2023 hat sich diese Geschichte wirklich ereignet. Coaxis, ein KMU im Lot-et-Garonne, wurde von LockBit getroffen.",
+      story2:
+        "350.000 Unternehmen lahmgelegt. 5 Millionen Dollar Lösegeld gefordert.\nSie haben nicht gezahlt. Sie haben alles in einem Monat wiederaufgebaut.",
+      story3: "Die beste Verteidigung sind Sie selbst.",
+      docLink: "🎬 Die vollständige Dokumentation ansehen",
+    },
+
+    // ──────────── ShareButton ────────────
+    shareButton: {
+      label: "MEINE PUNKTZAHL AUF LINKEDIN TEILEN",
+      message: (score: string, time: string) =>
+        `🔐 Ich habe gerade das Escape Game „Don't Go to the Police" abgeschlossen – und den Rang ${score} in ${time} erreicht!
+
+5 Stufen, um einen Cyberangriff von innen zu erleben und zu verstehen, warum Cybersicherheit UNS ALLE betrifft.
+
+Inspiriert vom echten LockBit-Angriff auf Coaxis im Dezember 2023, erzählt in der Dokumentation von @Orange Cyberdefense.
+
+🎬 Dokumentation ansehen: https://dontgotothepolice.orangecyberdefense.com
+🎮 Das Escape Game spielen: https://dontgotothepolice.vercel.app/
 
 #DontGoToThePolice #OrangeCyberdefense #Orange`,
     },
